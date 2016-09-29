@@ -10,8 +10,8 @@ Component
 
 This is an update from my event calendar. Evencal using :
 * Bullet list
- *  ~~Codeignter 2.1.3~~ 'Codeigniter 3.x <https://codeigniter.com/docs>'_
- *  'jQuery 1.7.2 <http://jquery.com/download/>'_
- *  'jQuery Colorbox <http://www.jacklmoore.com/colorbox/>'_
- *  'CSS Notification Boxes <https://paulund.co.uk/giveaway-10-css-notification-boxes-for-free>'_
+ *  ~~Codeignter 2.1.3~~ [Codeigniter 3.x] (https://codeigniter.com/docs)
+ *  [jQuery 1.7.2] (http://jquery.com/download)
+ *  [jQuery Colorbox] (http://www.jacklmoore.com/colorbox)
+ *  [CSS Notification Boxes] (https://paulund.co.uk/giveaway-10-css-notification-boxes-for-free)
 

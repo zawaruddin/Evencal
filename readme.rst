@@ -9,8 +9,12 @@ Component
 *******************
 
 This is an update from my event calendar. Evencal using :
-* `Codeigniter 3.x <https://codeigniter.com/docs>`_
-* `jQuery 1.7.2 <http://jquery.com/download/>`_
-* `jQuery Colorbox <http://www.jacklmoore.com/colorbox/>`_
-* `CSS Notification Boxes <https://paulund.co.uk/giveaway-10-css-notification-boxes-for-free>`_
+- `Codeigniter 3.x <https://codeigniter.com/docs>`_
+
+- `jQuery 1.7.2 <http://jquery.com/download/>`_
+
+- `jQuery Colorbox <http://www.jacklmoore.com/colorbox/>`_
+
+- `CSS Notification Boxes <https://paulund.co.uk/giveaway-10-css-notification-boxes-for-free>`_
+
 

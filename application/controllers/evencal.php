@@ -171,4 +171,42 @@ class Evencal extends CI_Controller {
 								   {cal_row_end}</tr>{/cal_row_end}
 								   {table_close}</tbody></table>{/table_close}');
 	}
+	
+	// popup for editing event
+	function edit_event(){
+		$result   = $this->evencal->getEventDetail($this->input->post('id', true));
+		list($year, $mon, $day) = explode('-', $result['date']);
+		
+		$data['day'] = $day;
+		$data['month'] = $this->_month($mon);
+		$data['mon'] = $mon;
+		$data['year'] = $year;
+		$data['event']   = $this->evencal->getEventDetail($this->input->post('id', true));
+		$this->load->view('edit_event', $data);
+	}
+	
+	// do adding event for selected date
+	function do_edit(){
+		$this->form_validation->set_rules('year', 'Year', 'trim|required|is_natural_no_zero');
+		$this->form_validation->set_rules('mon', 'Month', 'trim|required|is_natural_no_zero|less_than[13]');
+		$this->form_validation->set_rules('day', 'Day', 'trim|required|is_natural_no_zero|less_than[32]');
+		$this->form_validation->set_rules('hour', 'Hour', 'trim|required');
+		$this->form_validation->set_rules('minute', 'Minute', 'trim|required');
+		$this->form_validation->set_rules('event', 'Event', 'trim|required');
+		$this->form_validation->set_rules('id', 'ID', 'trim|numeric|required');
+		
+		if ($this->form_validation->run() == FALSE){
+			echo json_encode(array('status' => false, 'title_msg' => 'Error', 'msg' => 'Please insert valid value'));
+		}else{
+			$time = $this->input->post('hour', true).":".$this->input->post('minute', true).":00";
+			$this->evencal->editEvent($this->input->post('id', true),
+										$this->input->post('year', true), 
+										$this->input->post('mon', true), 
+										$this->input->post('day', true), 
+										$time,
+										$this->input->post('event', true));
+										
+			echo json_encode(array('status' => true, 'time' => $time, 'event' => $this->input->post('event', true)));
+		}
+	}
 }

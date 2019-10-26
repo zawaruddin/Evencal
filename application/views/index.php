@@ -98,6 +98,13 @@
 					data:{year:<?php echo $year;?>,mon:<?php echo $mon;?>, day: $(this).attr('val')}
 			});
 		});
+		$(".edit").live('click', function(){
+			$.colorbox({ 
+					overlayClose: false,
+					href: '<?php echo site_url('evencal/edit_event/');?>',
+					data:{id: $(this).attr('val')}
+			});
+		});
 </script>
 </body>
 </html>

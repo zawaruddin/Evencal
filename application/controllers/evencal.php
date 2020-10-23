@@ -142,6 +142,9 @@ class Evencal extends CI_Controller {
 					);
 		$this->load->view('index', $data);
 	}
+	function welcome(){
+		echo "untuk hacktober fest PR";
+	}
 	
 	// setting for calendar
 	function _setting(){

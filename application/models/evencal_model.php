@@ -69,4 +69,22 @@ class Evencal_model extends CI_Model {
 		}
 		return $check->total;
 	}
+	
+	// get single detail event
+	function getEventDetail($id){
+		$query = $this->db->select('idevent as id, event_date as date, event_time as time, event')->get_where('event_detail', array('idevent' => $id));
+		if($query->num_rows() > 0){
+			return $query->row_array();
+		}else{
+			return null;
+		}
+	}
+	
+	// edit event
+	function editEvent($id, $year, $month, $day, $time, $event){	
+		$day   = (strlen($day) == 1)? "0$day" : $day;
+		$month = (strlen($month) == 1)? "0$month" : $month;
+		
+		$this->db->update('event_detail', array('event_date' => "$year-$month-$day", 'event_time' => $time, 'event' => $event), array('idevent' => $id));
+	}
 }

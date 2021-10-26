@@ -54,6 +54,20 @@ class Evencal extends CI_Controller {
 		}
 		return $month;
 	}
+
+	function _days($day){
+		$day = (int) $day;
+		switch($day){
+			case 1 : $month = 'Monday'; Break;
+			case 2 : $month = 'Tuesday'; Break;
+			case 3 : $month = 'Wednesday'; Break;
+			case 4 : $month = 'Thusrday'; Break;
+			case 5 : $month = 'Friday'; Break;
+			case 6 : $month = 'Saturday'; Break;
+			case 7 : $month = 'Friday'; Break;
+		}
+		return $day;
+	}
 	
 	// get detail event for selected date
 	function detail_event(){		
